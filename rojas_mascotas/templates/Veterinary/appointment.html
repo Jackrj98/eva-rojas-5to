@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% block title %} {{ title }} {% endblock title %} }}
+{% block body %}
+    <div class="container p-5 mt-5">
+        <div class="row">
+            <div class="col mx-auto">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Client</th>
+                            <th scope="col">Pet</th>
+                            <th scope="col">Raza</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            {% for app in appointment %}
+                                <th scope="row">{{ app.pk }}</th>
+                                <td>{{ app.person.lastname }} {{ app.person.name }}</td>
+                                <td>
+                                    {% for a in app.person.pets.all %}
+                                        {{ a.name }}
+                                    {% endfor %}
+                                </td>
+                                <td>
+                                    {% for a in app.person.pets.all %}
+                                        {{ a.raza }}
+                                    {% endfor %}
+                                </td>
+                                <td>{{ app.date }}</td>
+                                <td>{{ app.time }}</td>
+                                <td>{{ app.status }}</td>
+
+
+                            {% endfor %}
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock body %} }}

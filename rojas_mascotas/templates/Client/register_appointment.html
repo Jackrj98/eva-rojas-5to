@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block title %}{{ title }}{% endblock title %}
+{% block body %}
+    <div class="container">
+        <div class="row p-5">
+            <div class="col-8 mx-auto">
+                <form method="post">
+                    <h3 class="text-lg-center"><span class="badge badge-primary">{{ title }}</span></h3>
+                    {% csrf_token %}
+                    <span class="badge badge-primary">Data Pet</span>
+                    {{ form_appointment.as_p }}
+                    <a href="{% url 'home' %}" class="btn btn-danger">Cancel</a>
+                    <button type="submit" class="btn btn-outline-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock body %} }}

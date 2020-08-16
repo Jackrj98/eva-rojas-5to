@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col mx-auto">
+            <div class="text-lg-center mx-auto mt-5 p-lg-5">
+                <a href="{% url 'add_pet' %}" class="btn btn-outline-danger">add Pet</a>
+                <a href="{% url 'add_appoinment' %}" class="btn btn-outline-danger">add Appointment</a>
+            </div>
+                {% for pet in pets %}
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/pets.svg' %}" class="card-img-top material-icons" alt="">
+                        <div class="card-body">
+                            <h3 class="text-lg-center">{{ pet.name | title }}</h3>
+                            <p class="card-text">
+                                <span class="text-justify"><strong>type:</strong> {{ pet.type }}</span><br>
+                                <span class="text-justify"><strong>raza:</strong> {{ pet.raza }}</span><br>
+                                <span class="text-justify"><strong>height:</strong> {{ pet.height }}</span>
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock body %}

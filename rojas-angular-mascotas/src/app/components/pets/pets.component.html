@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="text-lg-center mx-auto mt-5 p-lg-5">
+    <mat-card-actions align="center">
+      <button mat-flat-button color="primary" class="m-2" (click)="create()">
+        <mat-icon>add</mat-icon>
+        Pet
+      </button>
+      <button mat-flat-button color="accent" class="m-2" (click)="add_appoint()">
+        <mat-icon>add</mat-icon>
+        Appointmnet
+      </button>
+    </mat-card-actions>
+    <!--        <a href="{% url 'add_appoinment' %}" class="btn btn-outline-danger">add Appointment</a>-->
+  </div>
+  <app-util-pets [pets]="pets"></app-util-pets>
+</div>
+

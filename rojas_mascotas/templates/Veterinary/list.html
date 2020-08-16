@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block title %} {{ title }} {% endblock title %} }}
+{% block body %}
+    <div class="container p-5 mt-5">
+        <div class="row">
+            <div class="col mx-auto">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Client</th>
+                            <th scope="col">Pet</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for app in clients %}
+                            <tr>
+                                <td>{{ app.pk }}</td>
+                                <td>{{ app.lastname }} {{ app.name }}</td>
+                                <td>
+                                    {% for foo in app.pets.all %}
+                                        {{ foo.name }}
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock body %} }}

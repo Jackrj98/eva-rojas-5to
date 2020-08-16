@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" align="end">
+
+
+  <ng-container *ngIf="!currentUser || currentUser === null; else logged">
+    <span>Client</span>
+    <span class="example-spacer"></span>
+    <a mat-menu-item class="example-icon favorite-icon"  routerLink="/register-client" align="end">
+      <mat-icon>account_circle</mat-icon>
+    </a>
+
+  </ng-container>
+  <ng-template #logged>
+    <span>List Pets of Client</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" (click)="appComponent.logout()" align="end">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </ng-template>
+</mat-toolbar>

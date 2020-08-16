@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col mx-auto" *ngFor="let pet of pets">
+        <div class="card" style="width: 18rem;" >
+          <img src="assets/pets.svg" class="card-img-top material-icons" alt="">
+          <div class="card-body">
+            <h3 class="text-lg-center">{{ pet?.name  }}</h3>
+            <p class="card-text">
+              <span class="text-justify"><strong>type:</strong> {{ pet?.type }}</span><br>
+              <span class="text-justify"><strong>raza:</strong> {{ pet?.raza }}</span><br>
+              <span class="text-justify"><strong>height:</strong> {{ pet?.height }}</span>
+            </p>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>

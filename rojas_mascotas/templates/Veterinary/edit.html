@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block body %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form_veterinary.as_p }}
+            <a href="{% url 'home' %}" class="btn btn-danger">Cancel</a>
+            <button type="submit" class="btn btn-outline-primary" >Save</button>
+        </form>
+    </div>
+{% endblock body %} }}
